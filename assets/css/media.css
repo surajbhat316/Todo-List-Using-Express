@@ -1,0 +1,30 @@
+@media screen and (max-width: 400px) {
+
+    *{
+        font-size: 20px;
+    }
+
+    .todo-container{
+        width: 90%;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .task-info{
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .category-and-date{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-and-date .category, .due-date{
+        width: 100%;
+    }
+}
