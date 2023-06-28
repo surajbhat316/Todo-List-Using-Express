@@ -1,0 +1,57 @@
+.todo-container{
+    box-shadow: 0px 0px 4px 2px;
+    width: 50%;
+    margin: auto;
+    height: max-content;
+    padding: 1rem;
+
+}
+
+.todo-container h1{
+    text-align: center;
+}
+
+
+
+.descripttion{
+    border: 1px solid #e8c2c2;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-and-date{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.due-date{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.buttons button{
+    margin: 0.5rem;
+}
+
+
+#tasks ul{
+    list-style: none;
+}
+
+#tasks ul li .task-info{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+}

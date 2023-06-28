@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title%></title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="todo-container">
+      <h1>TODO App</h1>
+
+      <form action="/create-task" method="post">
+        <div class="descripttion">
+          <label for="task_name">Description</label>
+          <input type="text" name="task_name" id="task_name" required />
+        </div>
+        
+        <div class="category-and-date">
+          <div class="category">
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="Select a Category" disabled selected>
+                Select a Category
+              </option>
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="School">School</option>
+              <option value="Cleaning">Cleaning</option>
+            </select>
+          </div>
+          <div class="due-date">
+            <label for="date">Due Date</label>
+            <input name="date" type="date" id="date" required />
+          </div>
+          
+        </div>
+        
+        <div class="buttons">
+          <button type="submit">Add Task</button>
+          <a href="/delete-task">
+            <button id="delete-btn" type="button">Remove Completed Tasks</button>
+          </a>
+        </div>
+        
+      </form>
+
+      <div id="tasks">
+        <ul>
+          <% for(let task of tasks){ %>
+          <li>
+            <div class="task-info">
+              
+              <p><%=task.task_name %></p>
+              <p><%=task.category %></p>
+              <p><%=task.due_date %></p>
+              <p>
+                <%if(task.isCompleted){%>
+                  Done
+                <%}else{%>
+                  Incomplete
+                  <%}%>
+              </p>
+              <a id="<%= task._id%>" href="/update-task?id=<%=task._id%>">
+                <!-- <input id="<%= task._id%>" class="checkbox" type="checkbox"/> -->
+                <span>
+                  <% if(task.isCompleted){%>
+                      Mark Incomplete
+                  <%}else {%>
+                    Mark Completed
+                  <%} %>
+                </span>
+            </a>
+            </div>
+          </li>
+          <%} %>
+        </ul>
+      </div>
+    </div>
+
+    <script src="/js/homePage.js"></script>
+  </body>
+</html>
